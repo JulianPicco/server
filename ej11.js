@@ -8,10 +8,14 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-app.get('/productos.html', function(req, res) {
+app.get('/productos', function(req, res) {
     res.sendFile(path.join(__dirname + '/productos.html'));
 });
 
-app.use(express.static(__dirname + '/css'));
+app.get('/index', function(req, res) {
+    res.sendFile(path.join(__dirname + '/index.html'));
+});
+
+app.use(express.static(__dirname + '/styles.css'));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
